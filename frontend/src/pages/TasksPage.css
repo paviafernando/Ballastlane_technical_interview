@@ -1,0 +1,134 @@
+.tasks-page {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.tasks-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(245, 245, 247, 0.8);
+  backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .tasks-topbar {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.tasks-topbar-user {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.tasks-topbar-user strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.logout-button {
+  background: var(--neutral-bg);
+  color: var(--text);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s var(--ease), transform 0.1s var(--ease);
+}
+
+.logout-button:hover {
+  background: var(--border-strong);
+}
+
+.logout-button:active {
+  transform: scale(0.96);
+}
+
+.tasks-content {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.tasks-content h1 {
+  font-size: 30px;
+}
+
+.tasks-content-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.new-task-button {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background 0.15s var(--ease), transform 0.1s var(--ease);
+}
+
+.new-task-button:hover {
+  background: var(--accent-hover);
+}
+
+.new-task-button:active {
+  transform: scale(0.97);
+}
+
+.tasks-section-compact {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tasks-section-title {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  margin: 0;
+}
+
+.form-error {
+  background: var(--danger-bg);
+  color: var(--danger);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+@media (max-width: 600px) {
+  .tasks-topbar {
+    padding: 12px 16px;
+  }
+
+  .tasks-content {
+    padding: 24px 16px 48px;
+  }
+
+  .tasks-content h1 {
+    font-size: 24px;
+  }
+}

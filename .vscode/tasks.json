@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "docker-compose-up-postgres",
+      "type": "shell",
+      "command": "docker compose up -d --wait postgres",
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "build-backend",
+      "type": "shell",
+      "command": "dotnet build TaskManagementSystem.sln",
+      "options": {
+        "cwd": "${workspaceFolder}/backend"
+      },
+      "dependsOn": ["docker-compose-up-postgres"],
+      "group": "build",
+      "problemMatcher": "$msCompile"
+    },
+    {
+      "label": "watch-frontend",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "isBackground": true,
+      "problemMatcher": {
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "VITE",
+          "endsPattern": "ready in"
+        }
+      }
+    }
+  ]
+}

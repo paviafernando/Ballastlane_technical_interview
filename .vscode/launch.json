@@ -1,0 +1,30 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": ".NET Core Launch (backend)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-backend",
+      "program": "${workspaceFolder}/backend/src/Api/bin/Debug/net8.0/TaskManagementSystem.Api.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/backend/src/Api",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5003"
+      },
+      "presentation": {
+        "hidden": true
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Backend + Frontend",
+      "configurations": [".NET Core Launch (backend)"],
+      "preLaunchTask": "watch-frontend",
+      "stopAll": true
+    }
+  ]
+}
